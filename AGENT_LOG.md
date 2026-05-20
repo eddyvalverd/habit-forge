@@ -87,3 +87,30 @@
 
 - `PASS` `npm run lint`
 - `PASS` `npm run build`
+
+# 2026-05-20 - Finalizer Release Pass
+
+## Acceptance Criteria Verification
+
+- `PASS` 1. User can create a habit.
+- `PASS` 2. Empty habit names are rejected.
+- `PASS` 3. User can mark a habit as completed today.
+- `PASS` 4. User can unmark a habit for today.
+- `PASS` 5. User can delete a habit.
+- `PASS` 6. Habits persist after page refresh.
+- `PASS` 7. Current streak is visible.
+- `PASS` 8. App works on mobile width.
+- `PASS` 9. No TypeScript errors.
+- `PASS` 10. Build passes.
+- `PASS` 11. Lint passes.
+- `PASS` 12. README explains how to run the app.
+
+## Finalizer Work
+
+- Updated `README.md` with release-facing app description, features, install steps, local run steps, known limitations, and next-version ideas.
+- Re-verified the app with `npm run lint` and `npm run build`.
+- Confirmed Habit Forge v0.1 is ready for release based on the current acceptance criteria.
+
+## Final Status
+
+- Release status: ready for v0.1
