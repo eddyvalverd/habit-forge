@@ -36,3 +36,54 @@
 ## Remaining Limitation
 
 - No interactive browser session was run in this environment, so the manual UI pass in `TASKS.md` remains unchecked even though the implementation covers the required flows.
+
+# 2026-05-20 - Internal Review Loop
+
+## QA Agent
+
+- `PASS` 1. User can create a habit.
+  The page includes a habit form with submit handling that inserts a new habit card into state immediately.
+- `PASS` 2. Empty habit names are rejected.
+  Submission trims the input and returns early for empty or whitespace-only values.
+- `PASS` 3. User can mark a habit as completed today.
+  Each habit card exposes a completion button that adds today's `YYYY-MM-DD` date to the habit state.
+- `PASS` 4. User can unmark a habit for today.
+  The same toggle removes today's date when the habit is already marked complete.
+- `PASS` 5. User can delete a habit.
+  Each card has a delete action that filters the habit from state.
+- `PASS` 6. Habits persist after page refresh.
+  Habits are initialized from `localStorage` and written back after state changes using the stable `habit-forge.habits` key.
+- `PASS` 7. Current streak is visible.
+  Every habit card renders a `Current streak:` label with the computed consecutive-day count.
+- `PASS` 8. App works on mobile width.
+  The layout is mobile-first with stacked form controls and stacked card actions before the `sm` breakpoint.
+- `PASS` 9. No TypeScript errors.
+  Confirmed by `npm run build`.
+- `PASS` 10. Build passes.
+  Confirmed by `npm run build`.
+- `PASS` 11. Lint passes.
+  Confirmed by `npm run lint`.
+- `PASS` 12. README explains how to run the app.
+  `README.md` includes install, dev-server, and verification commands.
+
+## Reviewer Agent
+
+- No unnecessary product complexity beyond one implementation compromise:
+  hydration uses `useSyncExternalStore` to avoid the repo's React lint rule against synchronous `setState` in effects.
+- No broken edge cases found in the current MVP flows:
+  stored habits are parsed defensively, invalid payloads fall back to `[]`, duplicate completion dates are deduplicated, and streaks return `0` unless today is completed.
+- No obvious UI issues found from code inspection:
+  the form and card actions stack cleanly on small screens, and button labels match the required behaviors.
+- No `localStorage` bugs found in the current logic:
+  state hydrates from the stable storage key and persistence runs after hydration with serialized habit state.
+- No TypeScript issues found:
+  the latest `npm run build` completed successfully.
+
+## Builder Agent
+
+- No fixes were required after this review pass.
+
+## Verification
+
+- `PASS` `npm run lint`
+- `PASS` `npm run build`
