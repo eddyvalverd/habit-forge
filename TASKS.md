@@ -2,29 +2,29 @@
 
 ## Phase 1 - Planning
 
-- [ ] Confirm app scope from PRD.md
-- [ ] Define component structure
-- [ ] Define habit data model
+- [x] Confirm app scope from PRD.md
+- [x] Define component structure
+- [x] Define habit data model
 
 ## Phase 2 - Build
 
-- [ ] Build habit type/model
-- [ ] Build localStorage persistence
-- [ ] Build create habit form
-- [ ] Build habit card
-- [ ] Build mark/unmark complete logic
-- [ ] Build streak calculation
-- [ ] Build delete habit logic
-- [ ] Build responsive UI
+- [x] Build habit type/model
+- [x] Build localStorage persistence
+- [x] Build create habit form
+- [x] Build habit card
+- [x] Build mark/unmark complete logic
+- [x] Build streak calculation
+- [x] Build delete habit logic
+- [x] Build responsive UI
 
 ## Phase 3 - Quality
 
-- [ ] Run lint
-- [ ] Run build
+- [x] Run lint
+- [x] Run build
 - [ ] Manually verify acceptance criteria
-- [ ] Fix issues
+- [x] Fix issues
 
 ## Phase 4 - Release
 
-- [ ] Update README
-- [ ] Write final summary
+- [x] Update README
+- [x] Write final summary
